@@ -29,14 +29,18 @@ async function getFourSquare(lat, long,category){
     const options = {
         method: 'GET',
         headers: {
-          accept: 'application/json',
-          Authorization: 'fsq3EJsTVBHhGQrAkhe37di2BRSCUz5CmWc8T7VwGG90vcU='
+            accept: 'application/json',
+            Authorization: 'fsq3EJsTVBHhGQrAkhe37di2BRSCUz5CmWc8T7VwGG90vcU='
         }
     };
-    fetch('https://api.foursquare.com/v3/places/nearby', options)
-    .then(response => response.json())
+    let limit = 5
+    let lat = pos.coords.latitude
+    let lon = pos.coords.longitude
+    fetch('https://api.foursquare.com/v3/places/search?query=business&ll=32.6500352%2C-117.047296&sort=DISTANCE&limit=5', options)
+    let data = await response.text
+    /*.then(response => response.json())
     .then(response => console.log(response))
-    .catch(err => console.error(err));
+    .catch(err => console.error(err));*/
 }
 
 /*
