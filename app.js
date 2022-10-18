@@ -24,8 +24,12 @@ buildMap()
 //Create Marker
 
 
-//Foursquare API
-async function getFourSquare(lat, long,category){
+// //Foursquare API
+
+
+
+
+async function getFourSquare(lati, long,category){
     const options = {
         method: 'GET',
         headers: {
